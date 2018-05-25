@@ -1,10 +1,18 @@
 import React from "react";
 import {darkBlue} from "../../../config/styles";
-import {Dimensions, ImageBackground, SafeAreaView, Text, View} from "react-native";
+import {ImageBackground, SafeAreaView, Text, View} from "react-native";
 import images from './../../../../assets/img/images';
 import {VH, VW} from "../../../config/constants";
+import {createStructuredSelector} from "reselect";
+import {getCards} from "../../../reducer/actions";
+import {connect} from "react-redux";
+import {makeSelectCards} from "../../../reducer/selectors";
 
-export default class CardSearch extends React.Component {
+class CardSearch extends React.Component {
+
+	componentWillMount(){
+		this.props.onGetCards();
+	}
 	render() {
 		return (
 			<View>
@@ -16,3 +24,18 @@ export default class CardSearch extends React.Component {
 		)
 	}
 }
+
+const mapStateToProps = createStructuredSelector({
+	cards: makeSelectCards()
+});
+
+export function mapDispatchToProps(dispatch) {
+	return {
+		onGetCards: () => {
+			dispatch(getCards());
+		}
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(CardSearch);
+

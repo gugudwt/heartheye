@@ -47,6 +47,7 @@ export default createBottomTabNavigator({
 	tabBarOptions: {
 		activeTintColor: mainColor,
 		inactiveTintColor: 'white',
-		style: generalStyle.tabBarStyle
+		style: generalStyle.tabBarStyle,
+		showLabel: false
 	},
 });
