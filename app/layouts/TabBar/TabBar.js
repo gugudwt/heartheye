@@ -41,14 +41,12 @@ export default createBottomTabNavigator({
 			} else if (routeName === 'DeckSearch') {
 				iconName = 'info';
 			}
-
-			// You can return any component that you like here! We usually use an
-			// icon component from react-native-vector-icons
 			return <Icon name={iconName} type={'font-awesome'} size={25} color={tintColor}/>;
 		},
 	}),
 	tabBarOptions: {
 		activeTintColor: mainColor,
-		inactiveTintColor: 'gray',
+		inactiveTintColor: 'white',
+		style: generalStyle.tabBarStyle
 	},
 });
