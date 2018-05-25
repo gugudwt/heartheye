@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import createSagaMiddleware from 'redux-saga';
-// import TabBar from "./layouts/TabBar";
+import TabBar from "./layouts/TabBar";
 // import reducer, {initialState} from '../app/reducer';
 // import {createStore, applyMiddleware} from 'redux';
 // import {Provider} from 'react-redux';
 // import sagas from '../app/reducer/sagas';
 // import SplashScreen from 'react-native-splash-screen'
-import {SafeAreaView, Text} from 'react-native';
+import {SafeAreaView, Text, View} from 'react-native';
+import {darkBlue} from "./config/styles";
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -32,13 +33,9 @@ export default class Index extends Component {
 
 	render() {
 		return (
-				<SafeAreaView style={{flex: 1, backgroundColor: 'white'}}>
-					{/*<TabBar
-						onNavigationStateChange={null}
-					/>*/}
-					<Text>Prova</Text>
-				</SafeAreaView>
-
+			<TabBar
+				onNavigationStateChange={null}
+			/>
 		);
 	}
 }
