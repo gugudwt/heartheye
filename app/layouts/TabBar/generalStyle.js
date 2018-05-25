@@ -4,7 +4,7 @@ import {darkBlue, regularBlue} from "../../config/styles";
 export default StyleSheet.create({
 	headerStyle: {
 		backgroundColor: darkBlue,
-		borderBottomWidth: 2,
+		borderBottomWidth: 1,
 		borderBottomColor: regularBlue
 	},
 	headerTitleStyle: {
@@ -12,7 +12,7 @@ export default StyleSheet.create({
 	},
 	tabBarStyle: {
 		backgroundColor: darkBlue,
-		borderTopWidth: 2,
+		borderTopWidth: 1,
 		borderTopColor: regularBlue
 	}
 });
