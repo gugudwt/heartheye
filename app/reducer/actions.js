@@ -7,6 +7,7 @@ export function getCards() {
 }
 
 export function getCardsSuccess(cards) {
+	console.log(cards);
 	return {
 		type: GET_CARDS_SUCCESS,
 		cards

@@ -5,6 +5,7 @@ import {Routes} from './../routes/routes';
 
 export function* getCards() {
 	let cards = yield call(Routes.getCards);
+	console.log(cards);
 	yield put(getCardsSuccess(cards));
 }
 

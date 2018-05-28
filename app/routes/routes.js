@@ -2,6 +2,7 @@ import axios from 'axios';
 import {ERROR_CODE_NETWORK, ERROR_CODE_TIMEOUT, TIMEOUT} from "../config/config";
 import {API_ENDPOINTS, BASE_HS_PARAMS} from "../config/api";
 
+process.nextTick = setImmediate;
 const axiosInstance = axios.create();
 axiosInstance.defaults.timeout = TIMEOUT;
 axiosInstance.interceptors.response.use((response) => {
@@ -21,8 +22,9 @@ axiosInstance.interceptors.response.use((response) => {
 export class Routes {
 	static getCards = function(){
 		let url = API_ENDPOINTS.GET_CARDS;
-		axios.get(url, BASE_HS_PARAMS).then(res => {
+		return axiosInstance.get(url, BASE_HS_PARAMS).then(res => {
 			console.log(res.data);
+			return res.data;
 		}).catch(function(error){
 			console.log(error);
 		})
