@@ -1,12 +1,13 @@
 import React from "react";
 import {darkBlue} from "../../../config/styles";
-import {ImageBackground, ListView, SafeAreaView, Text, View} from "react-native";
+import {Image, ImageBackground, ListView, SafeAreaView, Text, TouchableOpacity, View} from "react-native";
 import images from './../../../../assets/img/images';
 import {VH, VW} from "../../../config/constants";
 import {createStructuredSelector} from "reselect";
 import {getCards} from "../../../reducer/actions";
 import {connect} from "react-redux";
 import {makeSelectCards} from "../../../reducer/selectors";
+import styles from "./style";
 
 class CardSearch extends React.Component {
 	constructor(props) {
@@ -33,9 +34,15 @@ class CardSearch extends React.Component {
 		})
 	}
 
-	_renderRow = function (card: string, sectionID: number, rowID: number, highlightRow: (sectionID: number, rowID: number) => void) {
+	_renderRow(card) {
+		console.log(card.img);
 		return (
-			<Text>prova</Text>
+			<TouchableOpacity style={styles.listItem}>
+				<View style={styles.imageContainer}>
+					<Image source={{uri: card.img}} style={styles.cardImage}/>
+				</View>
+				<Text>{card.name}</Text>
+			</TouchableOpacity>
 		)
 	}
 

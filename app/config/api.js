@@ -5,5 +5,5 @@ export const BASE_HS_PARAMS = {
 	}
 }
 export const API_ENDPOINTS={
-	GET_CARDS: BASE_HS_API + "/cards"
+	GET_CARDS: BASE_HS_API + "/cards?collectible=1"
 };

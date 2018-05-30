@@ -11,7 +11,6 @@ function reducer(state = initialState, action) {
 			return state
 				.setIn(['cards'], fromJS([]));
 		case GET_CARDS_SUCCESS:
-			console.log(action.cards);
 			return state
 				.setIn(['cards'], action.cards);
 		default:
